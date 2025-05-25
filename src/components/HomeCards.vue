@@ -13,7 +13,7 @@ import Card from '@/components/Card.vue';
             Browse our Vue jobs and start your career today
           </p>
           <RouterLink
-            to="https://job-backend-qo34.onrender.com/jobs"
+            to="/jobs"
             class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
           >
             Browse Jobs
