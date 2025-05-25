@@ -20,7 +20,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://job-backend-qo34.onrender.com/jobs');
+    const response = await axios.get('https://job-backend-qo34.onrender.com');
     state.jobs = response.data;
   } catch (error) {
     console.error('Error fetching jobs', error);
