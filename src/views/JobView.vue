@@ -34,6 +34,7 @@ const deleteJob = async () => {
 onMounted(async () => {
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/jobs/${jobId}`);
+    console.log('Fetched job:', response.data);
     state.job = response.data;
   } catch (error) {
     console.error('Error fetching job', error);
@@ -83,10 +84,10 @@ onMounted(async () => {
           <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-bold mb-6">Company Info</h3>
 
-            <h2 class="text-2xl">{{ state.job.company.name }}</h2>
+            <h2 class="text-2xl">{{ state.job.company?.name }}</h2>
 
             <p class="my-2">
-              {{ state.job.company.description }}
+              {{ state.job.company?.description }}
             </p>
 
             <hr class="my-4" />
@@ -94,13 +95,13 @@ onMounted(async () => {
             <h3 class="text-xl">Contact Email:</h3>
 
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ state.job.company.contactEmail }}
+              {{ state.job.company?.contactEmail }}
             </p>
 
             <h3 class="text-xl">Contact Phone:</h3>
 
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ state.job.company.contactPhone }}
+              {{ state.job.company?.contactPhone }}
             </p>
           </div>
 

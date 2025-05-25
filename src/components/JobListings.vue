@@ -14,8 +14,9 @@ defineProps({
 });
 
 const state = reactive({
-  jobs: [],
+  jobs: [], 
   isLoading: true,
+  error: null // Add error state
 });
 
 onMounted(async () => {
@@ -25,15 +26,22 @@ onMounted(async () => {
         'Content-Type': 'application/json'
       }
     });
+
     if (!response.data) throw new Error("No data received");
-    state.jobs = response.data;
+
+    // ✅ Safely assign the jobs array
+    state.jobs = Array.isArray(response.data)
+      ? response.data
+      : response.data.jobs;
+
   } catch (error) {
     console.error('Error fetching jobs:', error);
-    // Optionally show user feedback (e.g., toast message)
+    state.error = 'Failed to fetch jobs';
   } finally {
     state.isLoading = false;
   }
 });
+
 </script>
 
 <template>
