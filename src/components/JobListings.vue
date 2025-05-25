@@ -20,11 +20,16 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/jobs`);
+    const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/jobs`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!response.data) throw new Error("No data received");
     state.jobs = response.data;
   } catch (error) {
-    console.error('Error fetching jobs', error);
+    console.error('Error fetching jobs:', error);
+    // Optionally show user feedback (e.g., toast message)
   } finally {
     state.isLoading = false;
   }
