@@ -112,17 +112,17 @@ const handleSubmit = async () => {
               class="border rounded w-full py-2 px-3"
               required
             >
-              <option value="Under $50K">under $50K</option>
-              <option value="$50K - $60K">$50 - $60K</option>
-              <option value="$60K - $70K">$60 - $70K</option>
-              <option value="$70K - $80K">$70 - $80K</option>
-              <option value="$80K - $90K">$80 - $90K</option>
-              <option value="$90K - $100K">$90 - $100K</option>
-              <option value="$100K - $125K">$100 - $125K</option>
-              <option value="$125K - $150K">$125 - $150K</option>
-              <option value="$150K - $175K">$150 - $175K</option>
-              <option value="$175K - $200K">$175 - $200K</option>
-              <option value="Over $200K">Over $200K</option>
+              <option value="Under $50K">under 50K</option>
+              <option value="$50K - $60K">KES50 - KES60K</option>
+              <option value="$60K - $70K">KES60 - KES70K</option>
+              <option value="$70K - $80K">KES70 - KES80K</option>
+              <option value="$80K - $90K">KES80 - KES90K</option>
+              <option value="$90K - $100K">KES90 - KES100K</option>
+              <option value="$100K - $125K">KES100 - KES125K</option>
+              <option value="$125K - $150K">KES125 - KES150K</option>
+              <option value="$150K - $175K">KES150 - KES175K</option>
+              <option value="$175K - $200K">KES175 - KES200K</option>
+              <option value="Over $200K">Over KES200K</option>
             </select>
           </div>
 
