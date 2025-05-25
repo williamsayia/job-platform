@@ -21,7 +21,7 @@ const state = reactive({
 onMounted(async () => {
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/jobs`);
+      `${import.meta.env.VITE_API_BASE_URL}`);
     state.jobs = response.data;
   } catch (error) {
     console.error('Error fetching jobs', error);
